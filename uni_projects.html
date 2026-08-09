@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Projects – Portfolio</title>
+  <meta name="description" content="University academic coursework and research projects" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <h2>University Projects</h2>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ai">University assignments</button>
+      <button class="filter-btn" data-filter="data">Colaborative projects</button>
+      <button class="filter-btn" data-filter="systems">Helping others</button>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Project Tile 1 -->
+      <div class="project-card" data-tags="ai" data-project="projects/ml-thesis.html">
+        <img src="https://via.placeholder.com/400x250/171717/8b5cf6?text=Example+Project" alt="Example Project - AI / ML thumbnail" />
+        <h3>Example Project - AI / ML</h3>
+        <p class="tags">AI / ML</p>
+        <a href="projects/ml-thesis.html" class="details-link">Read Story</a>
+      </div>
+
+      <!-- Project Tile 2 -->
+      <div class="project-card" data-tags="data" data-project="projects/network-mining.html">
+        <img src="https://via.placeholder.com/400x250/030712/06b6d4?text=Example+Project" alt="Example Project - Data Mining thumbnail" />
+        <h3>Example Project - Data Mining</h3>
+        <p class="tags">Data Mining</p>
+        <a href="projects/network-mining.html" class="details-link">Read Story</a>
+      </div>
+
+      <!-- Project Tile 3 -->
+      <div class="project-card" data-tags="systems" data-project="projects/compiler-design.html">
+        <img src="https://via.placeholder.com/400x250/18181b/eab308?text=Example+Project" alt="Example Project - Systems thumbnail" />
+        <h3>Example Project - Systems</h3>
+        <p class="tags">Systems</p>
+        <a href="projects/compiler-design.html" class="details-link">Read Story</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

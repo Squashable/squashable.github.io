@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Projects – Portfolio</title>
+  <meta name="description" content="Personal home projects showcase" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <h2>Home Projects</h2>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">making life easier</button>
+      <button class="filter-btn" data-filter="data">Model rail</button>
+      <button class="filter-btn" data-filter="hardware">funny robots</button>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Project Tile 1 -->
+      <div class="project-card" data-tags="web" data-project="projects/personal-blog.html">
+        <img src="https://via.placeholder.com/400x250/1e293b/60a5fa?text=Example+Project" alt="Example Project - Web thumbnail" />
+        <h3>Example Project</h3>
+        <p class="tags">Web</p>
+        <a href="projects/personal-blog.html" class="details-link">Read Story</a>
+      </div>
+
+      <!-- Project Tile 2 -->
+      <div class="project-card" data-tags="data" data-project="projects/fitness-tracker.html">
+        <img src="https://via.placeholder.com/400x250/0f172a/f43f5e?text=Example+Project" alt="Example Project - Data thumbnail" />
+        <h3>Example Project</h3>
+        <p class="tags">Data</p>
+        <a href="projects/fitness-tracker.html" class="details-link">Read Story</a>
+      </div>
+
+      <!-- Project Tile 3 -->
+      <div class="project-card" data-tags="hardware web" data-project="projects/smart-home.html">
+        <img src="https://via.placeholder.com/400x250/111827/10b981?text=Example+Project" alt="Example Project - Hardware thumbnail" />
+        <h3>Example Project</h3>
+        <p class="tags">Hardware</p>
+        <a href="projects/smart-home.html" class="details-link">Read Story</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
