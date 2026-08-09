@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#171717"/>
+  <circle cx="200" cy="110" r="40" fill="none" stroke="#8b5cf6" stroke-width="3"/>
+  <circle cx="200" cy="110" r="15" fill="#8b5cf6"/>
+  <line x1="200" y1="30" x2="200" y2="70" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="200" y1="150" x2="200" y2="190" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="120" y1="110" x2="160" y2="110" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="240" y1="110" x2="280" y2="110" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="200" y="220" fill="#a78bfa" font-family="Inter, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Example Project - AI / ML</text>
+</svg>
