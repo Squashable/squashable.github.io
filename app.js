@@ -2,19 +2,43 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Load Header Component
   const headerPlaceholder = document.getElementById('header-placeholder');
   if (headerPlaceholder) {
-    fetch('header.html')
-      .then(res => res.text())
-      .then(html => { headerPlaceholder.innerHTML = html; })
-      .catch(err => console.error('Failed to load header:', err));
+    (async () => {
+      const paths = ['/', '/header.html', 'header.html', '../header.html'];
+      for (const p of paths) {
+        const url = (p === '/') ? '/header.html' : p;
+        try {
+          const res = await fetch(url);
+          if (res && res.ok) {
+            headerPlaceholder.innerHTML = await res.text();
+            return;
+          }
+        } catch (e) {
+          // try next path
+        }
+      }
+      console.error('Failed to load header from known locations');
+    })();
   }
 
   // 2. Load Footer Component
   const footerPlaceholder = document.getElementById('footer-placeholder');
   if (footerPlaceholder) {
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(html => { footerPlaceholder.innerHTML = html; })
-      .catch(err => console.error('Failed to load footer:', err));
+    (async () => {
+      const paths = ['/', '/footer.html', 'footer.html', '../footer.html'];
+      for (const p of paths) {
+        const url = (p === '/') ? '/footer.html' : p;
+        try {
+          const res = await fetch(url);
+          if (res && res.ok) {
+            footerPlaceholder.innerHTML = await res.text();
+            return;
+          }
+        } catch (e) {
+          // try next path
+        }
+      }
+      console.error('Failed to load footer from known locations');
+    })();
   }
 
   // 3. Filter logic for project cards
