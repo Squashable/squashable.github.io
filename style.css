@@ -57,11 +57,14 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(18, 18, 18, 0.35);
+  /* slightly stronger glass so it separates from dark content */
+  background: rgba(18, 18, 18, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  /* subtle drop shadow to create depth against dark backgrounds */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
 }
 
 .nav-brand a {
@@ -252,6 +255,9 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  /* clear separation from page content */
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 -10px 24px rgba(0,0,0,0.45);
 }
 
 .footer-content {
@@ -320,6 +326,28 @@ a:hover {
   }
   .about-section {
     padding: 2rem 1rem;
+  }
+  /* Responsive project filter buttons */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .filter-btn {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: 220px;
+    padding: 0.6rem 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .filter-btn {
+    flex-basis: 100%;
+    max-width: none;
   }
 }
 
@@ -518,5 +546,16 @@ a:hover {
   font-weight: 700;
   color: #ffffff;
   text-align: center;
+}
+
+/* Thin dividers between major stacked sections to preserve visual barriers in dark mode */
+section + section {
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Ensure hero and primary sections appear above thin dividers (avoid overlap with sticky navbar) */
+section {
+  position: relative;
+  z-index: 0;
 }
 
