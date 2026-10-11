@@ -1,8 +1,10 @@
 .footer-section {
   padding: 1.5rem 2rem;
   text-align: center;
-  background: var(--bg-glass, rgba(255, 255, 255, 0.08));
-  backdrop-filter: blur(12px);
+  background: var(--bg-glass, #fffdf9);
+  border-top: 3px solid var(--accent-primary, #a84324);
+  box-shadow: 0 -2px 0 rgba(80, 55, 35, 0.15);
+  backdrop-filter: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,12 +51,19 @@
   object-fit: contain;
   vertical-align: middle;
   display: inline-block;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+/* The supplied GitHub and LinkedIn artwork is nearly black; invert it for the dark footer. */
+:root[data-theme="dark"] .social-icons a[aria-label="GitHub"] img,
+:root[data-theme="dark"] .social-icons a[aria-label="LinkedIn"] img {
+  filter: brightness(0) invert(1);
 }
 
 .footer-section p {
   margin: 0;
   font-size: 0.95rem;
-  color: var(--text-primary, #e0e0e0);
+  color: var(--text-primary, #302720);
   opacity: 0.85;
 }
 

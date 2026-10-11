@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Use the browser preference until the visitor chooses a theme themselves.
+  const savedTheme = localStorage.getItem('site-theme');
+  const initialTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.dataset.theme = initialTheme;
+
+  function updateThemeToggle() {
+    const button = document.querySelector('.theme-toggle');
+    if (!button) return;
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    const nextTheme = isDark ? 'light' : 'dark';
+    button.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
+    button.title = `Switch to ${nextTheme} mode`;
+    button.querySelector('.theme-toggle-icon').textContent = isDark ? String.fromCharCode(0x2600) : String.fromCharCode(0x263e);
+    button.querySelector('.theme-toggle-label').textContent = isDark ? 'Light' : 'Dark';
+  }
+  updateThemeToggle();
+
+  const useSystemThemeButton = document.getElementById('use-system-theme');
+  if (useSystemThemeButton) {
+    useSystemThemeButton.addEventListener('click', () => {
+      localStorage.removeItem('site-theme');
+      document.documentElement.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      updateThemeToggle();
+      document.getElementById('theme-reset-status').textContent = 'The saved choice has been removed.';
+    });
+  }
+
   // 1. Load Header Component
   const headerPlaceholder = document.getElementById('header-placeholder');
   if (headerPlaceholder) {
@@ -10,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const res = await fetch(url);
           if (res && res.ok) {
             headerPlaceholder.innerHTML = await res.text();
+            updateThemeToggle();
             return;
           }
         } catch (e) {
@@ -121,6 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Delegate click event for project cards / links
   document.body.addEventListener('click', (e) => {
+    const themeToggle = e.target.closest('.theme-toggle');
+    if (themeToggle) {
+      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = nextTheme;
+      localStorage.setItem('site-theme', nextTheme);
+      updateThemeToggle();
+      return;
+    }
+
     const card = e.target.closest('.project-card[data-project], .details-link[href]');
     if (card) {
       const projectUrl = card.dataset.project || card.getAttribute('href');

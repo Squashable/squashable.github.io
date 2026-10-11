@@ -6,5 +6,5 @@
   <line x1="200" y1="150" x2="200" y2="190" stroke="#8b5cf6" stroke-width="2"/>
   <line x1="120" y1="110" x2="160" y2="110" stroke="#8b5cf6" stroke-width="2"/>
   <line x1="240" y1="110" x2="280" y2="110" stroke="#8b5cf6" stroke-width="2"/>
-  <text x="200" y="220" fill="#a78bfa" font-family="Inter, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Example Project - AI / ML</text>
+  <text x="200" y="220" fill="#a78bfa" font-family="Tahoma, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle">MACHINE LEARNING</text>
 </svg>

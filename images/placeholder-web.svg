@@ -4,5 +4,5 @@
   <circle cx="50" cy="50" r="5" fill="#ef4444"/>
   <circle cx="65" cy="50" r="5" fill="#eab308"/>
   <circle cx="80" cy="50" r="5" fill="#22c55e"/>
-  <text x="200" y="135" fill="#60a5fa" font-family="Inter, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Example Project - Web</text>
+  <text x="200" y="135" fill="#60a5fa" font-family="Tahoma, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle">PERSONAL WEB</text>
 </svg>
